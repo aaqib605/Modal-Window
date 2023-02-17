@@ -21,6 +21,10 @@ buttonElements.forEach((button) => {
 
 closeModalEl.addEventListener("click", hideModal);
 
-document.addEventListener("keydown", hideModal);
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    hideModal();
+  }
+});
 
 overlayEl.addEventListener("click", hideModal);

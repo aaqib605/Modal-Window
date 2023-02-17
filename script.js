@@ -23,3 +23,8 @@ document.addEventListener("keydown", function (event) {
     overlayEl.classList.add("hidden");
   }
 });
+
+overlayEl.addEventListener("click", function () {
+  modalEl.classList.add("hidden");
+  overlayEl.classList.add("hidden");
+});

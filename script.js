@@ -16,21 +16,11 @@ const hideModal = function () {
 };
 
 buttonElements.forEach((button) => {
-  button.addEventListener("click", function () {
-    displayModal();
-  });
+  button.addEventListener("click", displayModal);
 });
 
-closeModalEl.addEventListener("click", function () {
-  hideModal();
-});
+closeModalEl.addEventListener("click", hideModal);
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    hideModal();
-  }
-});
+document.addEventListener("keydown", hideModal);
 
-overlayEl.addEventListener("click", function () {
-  hideModal();
-});
+overlayEl.addEventListener("click", hideModal);

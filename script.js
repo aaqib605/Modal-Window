@@ -5,26 +5,32 @@ const buttonElements = document.querySelectorAll(".show-modal");
 const closeModalEl = document.querySelector(".close-modal");
 const overlayEl = document.querySelector(".overlay");
 
+const displayModal = function () {
+  modalEl.classList.remove("hidden");
+  overlayEl.classList.remove("hidden");
+};
+
+const hideModal = function () {
+  modalEl.classList.add("hidden");
+  overlayEl.classList.add("hidden");
+};
+
 buttonElements.forEach((button) => {
   button.addEventListener("click", function () {
-    modalEl.classList.remove("hidden");
-    overlayEl.classList.remove("hidden");
+    displayModal();
   });
 });
 
 closeModalEl.addEventListener("click", function () {
-  modalEl.classList.add("hidden");
-  overlayEl.classList.add("hidden");
+  hideModal();
 });
 
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
-    modalEl.classList.add("hidden");
-    overlayEl.classList.add("hidden");
+    hideModal();
   }
 });
 
 overlayEl.addEventListener("click", function () {
-  modalEl.classList.add("hidden");
-  overlayEl.classList.add("hidden");
+  hideModal();
 });
